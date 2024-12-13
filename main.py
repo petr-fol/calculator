@@ -2,7 +2,7 @@ from defs import from_dec, in_dec
 
 def main():
 
-    print("чтобы выйти из программы введите '0'\n")
+    print("чтобы выйти из программы введите '0'")
     while True:
 
         a = int(input("в какой системе счисления ваше число?\n"))
