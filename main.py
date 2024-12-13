@@ -15,17 +15,17 @@ def main():
         if c == 0:
             break
 
-        num_notation = (2, 8, 10, 16)
-        dec = int
-        num = 0
+
         if a <= 36 and b <= 36:
             dec = c
             if a != 10:
                 dec = in_dec(c, a)
             num = from_dec(dec, b)
+
         else:
             print("вы ввели систему счисления > 36, могут быть ошибки в вычислениях изза ограниченного алфавита")
             answer = input("продолжить: Enter\n")
+
             if answer is None:
                 break
             else:
