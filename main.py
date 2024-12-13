@@ -26,11 +26,11 @@ def main():
             print("вы ввели систему счисления > 36, могут быть ошибки в вычислениях изза ограниченного алфавита")
             answer = input("продолжить: Enter\n")
 
-            if answer is None:
-                break
-            else:
+            if answer == '':
                 dec = in_dec(c, a)
                 num = from_dec(dec, b)
+            else:
+                break
 
         print(num)
 
