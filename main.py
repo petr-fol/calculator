@@ -1,5 +1,6 @@
-if __name__ == "main":
-    from defs import from_dec, in_dec
+from defs import from_dec, in_dec
+
+def main():
 
     print("чтобы выйти из программы введите '0'\n")
     while True:
@@ -32,3 +33,6 @@ if __name__ == "main":
                 num = from_dec(dec, b)
 
         print(num)
+
+if __name__ == "__main__":
+    main()
