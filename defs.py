@@ -1,5 +1,5 @@
 
-def from_dec(a_str, b):
+def from_dec(a_str, b) -> str:
     """
     :param a_str: число в 10 системе
     :param b: система исчисления в которую мы переводим число
@@ -24,7 +24,7 @@ def from_dec(a_str, b):
     new_num = new_num[::-1]
     return new_num
 
-def in_dec(n, b):
+def in_dec(n, b) -> int:
     """
     n = число переводимое в 10 систему
     b = основание системы
@@ -43,4 +43,45 @@ def in_dec(n, b):
         if value >= b:
             raise ValueError(f"цифра {char} не может быть в системе с основанием {b}")
         result += value * (b ** i)
+        print(f"{result} = {value} * {b}^{i}")
     return result
+
+def translator():
+    print("для выхода из переводчика введите 0")
+
+    a = input("в какой системе счисления ваше число?\n")
+    if a.isdigit():
+        a = int(a)
+        if a == 0:
+            return
+    else: return
+
+    b = input("в какую систему счисления перевести?\n")
+    if b.isdigit():
+        b = int(b)
+        if b == 0:
+            return
+    else: return
+    c = input("ваше число?\n")
+    if c.isdigit():
+        c = int(c)
+        if c == 0:
+            return
+    else: return
+
+
+    if a <= 36 and b <= 36:
+        dec = c
+        if a != 10:
+            dec = in_dec(c, a)
+        num = from_dec(dec, b)
+
+    else:
+        print("вы ввели систему счисления > 36, могут быть ошибки в вычислениях изза ограничений алфавита")
+
+        dec = in_dec(c, a)
+        num = from_dec(dec, b)
+
+        return num
+
+    return num

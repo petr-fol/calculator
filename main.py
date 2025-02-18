@@ -1,38 +1,29 @@
-from defs import from_dec, in_dec
+from defs import from_dec, in_dec, translator
+
 
 def main():
 
-    print("чтобы выйти из программы введите '0'")
     while True:
+        print("выберите действие:")
+        print("0. выйти ")
+        print("1. калькулятор чисел")
+        print("2. перевод чисел в разные системы")
+        main_f = input()
 
-        a = int(input("в какой системе счисления ваше число?\n"))
-        if a == 0:
-            break
-        b = int(input("в какую систему счисления перевести?\n"))
-        if b == 0:
-            break
-        c = input("ваше число?\n")
-        if c == 0:
-            break
-
-
-        if a <= 36 and b <= 36:
-            dec = c
-            if a != 10:
-                dec = in_dec(c, a)
-            num = from_dec(dec, b)
-
+        if main_f.isdigit():
+            main_f = int(main_f)
         else:
-            print("вы ввели систему счисления > 36, могут быть ошибки в вычислениях изза ограниченного алфавита")
-            answer = input("продолжить: Enter\n")
+            continue
 
-            if answer == '':
-                dec = in_dec(c, a)
-                num = from_dec(dec, b)
-            else:
-                break
-
-        print(num)
+        if main_f == 0:
+            break
+        elif main_f == 1:
+            pass
+        elif main_f == 2:
+            result = translator()
+            if result is not None:
+                print(result)
+        else: continue
 
 if __name__ == "__main__":
     main()
