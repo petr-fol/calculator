@@ -1,4 +1,4 @@
-from defs import from_dec, in_dec, translator
+from defs import from_dec, in_dec, translator, calculator
 
 
 def main():
@@ -18,7 +18,9 @@ def main():
         if main_f == 0:
             break
         elif main_f == 1:
-            pass
+            result = calculator()
+            if result is not None:
+                print(result)
         elif main_f == 2:
             result = translator()
             if result is not None:

@@ -85,3 +85,61 @@ def translator():
         return num
 
     return num
+
+def calculator():
+    a = input("в какой системе счисления первое число?\n")
+    if a.isdigit():
+        a = int(a)
+        if a == 0:
+            return
+    else:
+        return
+
+    b = input("в какой системе счисления второе число?\n")
+    if b.isdigit():
+        b = int(b)
+        if b == 0:
+            return
+    else:
+        return
+
+    c = input("первое число?\n")
+    if c.isdigit():
+        c = int(c)
+        if c == 0:
+            return
+    else:
+        return
+
+    d = input("второе число?\n")
+    if d.isdigit():
+        d = int(d)
+        if d == 0:
+            return
+    else:
+        return
+
+    e = input("в какой системе счисления вывести число?\n")
+    if e.isdigit():
+        e = int(e)
+        if e == 0:
+            return
+    else:
+        return
+    print("выберите действие для чисел: + - * /")
+    operation = input()
+    first = in_dec(c, a)
+    second = in_dec(d, b)
+    if operation == "+":
+        result = first + second
+    elif operation == "-":
+        result = first - second
+    elif operation == "*":
+        result = first * second
+    elif operation == "/":
+        result = first / second
+    else: return
+
+    result = from_dec(result, e)
+    return result
+
