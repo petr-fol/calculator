@@ -1,3 +1,10 @@
+from math import factorial as f
+def get_var(a):
+    if a.isdigit():
+        a = int(a)
+        return a
+    else:
+        return 0
 
 def from_dec(a_str, b) -> str:
     """
@@ -48,26 +55,12 @@ def in_dec(n, b) -> int:
 
 def translator():
     print("для выхода из переводчика введите 0")
-
-    a = input("в какой системе счисления ваше число?\n")
-    if a.isdigit():
-        a = int(a)
-        if a == 0:
-            return
-    else: return
-
-    b = input("в какую систему счисления перевести?\n")
-    if b.isdigit():
-        b = int(b)
-        if b == 0:
-            return
-    else: return
-    c = input("ваше число?\n")
-    if c.isdigit():
-        c = int(c)
-        if c == 0:
-            return
-    else: return
+    print("в какой системе счисления ваше число?\n")
+    a = get_var()
+    print("в какую систему счисления перевести?\n")
+    b = get_var()
+    print("ваше число?\n")
+    c = get_var()
 
 
     if a <= 36 and b <= 36:
@@ -87,47 +80,15 @@ def translator():
     return num
 
 def calculator():
-    a = input("в какой системе счисления первое число?\n")
-    if a.isdigit():
-        a = int(a)
-        if a == 0:
-            return
-    else:
-        return
-
-    b = input("в какой системе счисления второе число?\n")
-    if b.isdigit():
-        b = int(b)
-        if b == 0:
-            return
-    else:
-        return
-
-    c = input("первое число?\n")
-    if c.isdigit():
-        c = int(c)
-        if c == 0:
-            return
-    else:
-        return
-
-    d = input("второе число?\n")
-    if d.isdigit():
-        d = int(d)
-        if d == 0:
-            return
-    else:
-        return
-
-    e = input("в какой системе счисления вывести число?\n")
-    if e.isdigit():
-        e = int(e)
-        if e == 0:
-            return
-    else:
-        return
+    a = get_var(input("в какой системе счисления первое число?\n"))
+    b = get_var(input("в какой системе счисления второе число?\n"))
+    c = get_var(input("первое число?\n"))
+    d = get_var(input("второе число?\n"))
+    e = get_var(input("в какой системе счисления вывести число?\n"))
+    
     print("выберите действие для чисел: + - * /")
     operation = input()
+
     first = in_dec(c, a)
     second = in_dec(d, b)
     if operation == "+":
@@ -143,3 +104,8 @@ def calculator():
     result = from_dec(result, e)
     return result
 
+def count_combination():
+    n = int(input("общее количество\n"))
+    k = int(input("количество для 1 варианта комбинаций\n"))
+    result = f(n)/(f(k)*f((n-k)))
+    return result

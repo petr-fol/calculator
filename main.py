@@ -1,4 +1,6 @@
-from defs import from_dec, in_dec, translator, calculator
+from math import factorial
+
+from defs import from_dec, in_dec, translator, calculator, count_combination
 
 
 def main():
@@ -8,6 +10,7 @@ def main():
         print("0. выйти ")
         print("1. калькулятор чисел")
         print("2. перевод чисел в разные системы")
+        print("3. вычисление факториала")
         main_f = input()
 
         if main_f.isdigit():
@@ -25,7 +28,9 @@ def main():
             result = translator()
             if result is not None:
                 print(result)
-        else: continue
-
+        elif main_f == 3:
+            result = count_combination()
+            if result is not None:
+                print(result)
 if __name__ == "__main__":
     main()
