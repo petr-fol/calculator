@@ -103,7 +103,7 @@ def calculator():
     return result
 
 def count_combination():
-    n = get_var("общее количество\n")
-    k = get_var("количество для одного варианта комбинаций\n")
+    n = get_var("общее количество - n\n")
+    k = get_var("количество для одного варианта комбинаций - k\n")
     result = int(f(n)/(f(k)*f((n-k))))
     return result
