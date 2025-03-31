@@ -1,5 +1,6 @@
 from math import factorial as f
-def get_var(a):
+def get_var(text) -> int:
+    a = input(text)
     if a.isdigit():
         a = int(a)
         return a
@@ -55,12 +56,9 @@ def in_dec(n, b) -> int:
 
 def translator():
     print("для выхода из переводчика введите 0")
-    print("в какой системе счисления ваше число?\n")
-    a = get_var()
-    print("в какую систему счисления перевести?\n")
-    b = get_var()
-    print("ваше число?\n")
-    c = get_var()
+    a = get_var("в какой системе счисления ваше число?\n")
+    b = get_var("в какую систему счисления перевести?\n")
+    c = get_var("ваше число?\n")
 
 
     if a <= 36 and b <= 36:
@@ -80,11 +78,11 @@ def translator():
     return num
 
 def calculator():
-    a = get_var(input("в какой системе счисления первое число?\n"))
-    b = get_var(input("в какой системе счисления второе число?\n"))
-    c = get_var(input("первое число?\n"))
-    d = get_var(input("второе число?\n"))
-    e = get_var(input("в какой системе счисления вывести число?\n"))
+    a = get_var("в какой системе счисления первое число?\n")
+    b = get_var("в какой системе счисления второе число?\n")
+    c = get_var("первое число?\n")
+    d = get_var("второе число?\n")
+    e = get_var("в какой системе счисления вывести число?\n")
     
     print("выберите действие для чисел: + - * /")
     operation = input()
@@ -105,7 +103,7 @@ def calculator():
     return result
 
 def count_combination():
-    n = int(input("общее количество\n"))
-    k = int(input("количество для 1 варианта комбинаций\n"))
+    n = get_var("общее количество\n")
+    k = get_var("количество для 1 варианта комбинаций\n")
     result = f(n)/(f(k)*f((n-k)))
     return result
